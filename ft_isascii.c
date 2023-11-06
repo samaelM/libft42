@@ -6,11 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:03:14 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 14:05:22 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:15:22 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_ascii(char c)
+int	is_ascii(char c)
 {
     if (c >= 0 && c <= 127)
         return (1);

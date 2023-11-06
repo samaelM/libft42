@@ -6,13 +6,13 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:55:19 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 15:56:13 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:21:45 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_tolower(int c)
 {
-	if (c >= "A" && <= "Z")
-		return (c+32);
+	if (c >= 'A' && <= 'Z')
+		return (c + 32);
 	return (c);
 }
