@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:36:51 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 14:28:18 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/08 15:37:53 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/08 15:38:53 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void *dest;
-	dest = malloc(nmemb * size);
-	if (dest == NULL)
-		return (NULL);
-	ft_memset(dest, 0, nmemb);
-	return (dest);
+	
 }
