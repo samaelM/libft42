@@ -6,11 +6,12 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:17:57 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:11:42 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:29:25 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

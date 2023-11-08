@@ -6,10 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:53:27 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:31:55 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:30:09 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include<stdlib.h>
 
 char *ft_strnstr(char *big, const char *little, size_t len)

@@ -6,10 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:22:18 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:25:25 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:29:49 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 void *ft_memcpy(void *dest, const void *src, int n)
 {
 	char *d = dest;

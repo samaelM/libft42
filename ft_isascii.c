@@ -6,10 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:03:14 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 17:15:22 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:29:35 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int	is_ascii(char c)
 {
     if (c >= 0 && c <= 127)

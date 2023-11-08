@@ -6,10 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:55:19 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:33:22 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:30:13 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

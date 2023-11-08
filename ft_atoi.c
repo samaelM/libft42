@@ -6,10 +6,11 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:35:42 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:36:48 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:38:31 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {
