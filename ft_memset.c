@@ -6,13 +6,15 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:20:03 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 15:41:49 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:26:43 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 	char *ptr;
 
 	ptr = s;

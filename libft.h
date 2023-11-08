@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 13:58:35 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 10:12:38 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/08 10:01:02 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/08 10:03:31 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(char c)
-{
-    if ((c > 64 && c <91) || (c > 96 && c <123) || (c >= '0' && c <= '9'))
-        return (1);
-    return (0);
-}
+#ifndef LIBFT_H
+#define LIBFT_H
+
+int ft_isdigit(char c);
+int ft_atoi(const char *nptr);
+
+#endif

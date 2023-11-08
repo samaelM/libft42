@@ -6,13 +6,15 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:17:57 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 15:21:38 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:11:42 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 void ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 	char *ptr;
 
 	ptr = s;
@@ -23,5 +25,4 @@ void ft_bzero(void *s, size_t n)
 		i++;
 		ptr++;
 	}
-	return (s);
 }

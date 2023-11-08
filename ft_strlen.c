@@ -6,13 +6,14 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:10:01 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 14:12:31 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:07:47 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_strlen(char* str)
 {
-    int i;
+    int	i;
+
     i = 0;
     while (str[i])
         i++;

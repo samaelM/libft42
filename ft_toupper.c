@@ -6,13 +6,13 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:50:31 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/06 17:21:57 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:33:30 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_toupper(int c)
 {
-	if (c >= 'a' && <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }
