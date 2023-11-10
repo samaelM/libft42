@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:37:53 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/09 10:36:56 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:39:15 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *dest;
-	int i;
+	size_t i;
 
 	dest = malloc(len * sizeof(char));
 	i = 0;

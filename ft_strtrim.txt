@@ -1,38 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 17:53:27 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 16:01:36 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/09 13:01:52 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/10 12:17:09 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdlib.h>
+#include <stdlib.h>
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+int	trim_len(char const *s1, char  const *set)
 {
 	int i;
+	int slen;
+	int setlen;
 	int j;
-	i = 0;
-	if (!little[0])
-		return ((char *)big);
-	while (big[i] && len - i > 0)
+
+	slen = ft_strlen(s1);
+	setlen = ft_strlen(set);
+	i =0;
+	while (s[i] && s[i] == set[0])
 	{
-		if (big[i] == little[0])
+		j = 0;
+		while (s[i + j] && s[i + j] == set[j])
 		{
-			j = 0;
-			while (big[i+j] && big[i+j] == little[j] && len - i > 0)
-			{
-				j++;
-				if (little[j] == '\0')
-					return ((char *)&big[i]);
-			}
+			j++;
+			if (!set[j])
+				slen -= setlen;
 		}
-		i++;
+		
 	}
-	return (NULL);
+}
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	char *res;
+	int i;
+
+	res = malloc(ft_strlen(s1) * sizeof(char));
+	if (s1 != NULL)
+	{
+		i = 0;
+	}
+	while (s1[i])
+	{
+		
+	}
 }

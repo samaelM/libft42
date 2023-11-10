@@ -6,14 +6,14 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:27:27 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:45 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:44:10 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void *memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
 	size_t		i;
 	char		*string;
