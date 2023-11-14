@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:08:59 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/09 14:37:53 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:13:57 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ char *ft_strrchr(const char *s, int c)
 {
 	int i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
-	i--;
 	while (i >= 0)
 	{
 		if (s[i] == c)

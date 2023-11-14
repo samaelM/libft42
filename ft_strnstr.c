@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:53:27 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 16:01:36 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:33:18 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 		if (big[i] == little[0])
 		{
 			j = 0;
-			while (big[i+j] && big[i+j] == little[j] && len - i > 0)
+			while (big[i+j] && big[i+j] == little[j] && len - (i + j) > 0)
 			{
 				j++;
 				if (little[j] == '\0')

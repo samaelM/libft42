@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:06:33 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 14:38:04 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:20:04 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,26 @@
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t ssrc;
-	(void) size;
+	size_t	i;
+	size_t	j;
+	size_t	dest_length;
+	size_t	src_length;
 
-	ssrc = ft_strlen((char *)src);
-	ft_strlcpy(dst+ft_strlen(dst), src, ssrc+1);
-	return (ft_strlen(dst));
+	src_length = ft_strlen(src);
+	dest_length = ft_strlen(dst);
+	j = dest_length;
+	i = 0;
+	if (dest_length < size - 1 && size > 0)
+	{
+		while (src[i] && dest_length + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
+	}
+	if (dest_length >= size)
+		dest_length = size;
+	return (dest_length + src_length);
 }

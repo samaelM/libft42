@@ -6,13 +6,13 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:03:14 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 15:50:41 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:15:38 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
     if (c >= 0 && c <= 127)
         return (1);

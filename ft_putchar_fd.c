@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:56:46 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/14 12:02:15 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/13 10:51:49 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/13 11:09:01 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
-#include <stdlib.h>
 
-char *ft_strchr(const char *s, int c)
+void ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char*)(s + i));
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char*)(s + i));
-	return (NULL);
+	write(fd, &c, 1);
 }
