@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:38:43 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:42 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:10:58 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,52 @@
 
 char *ft_itoa(int n)
 {
-	char *res;
 	int nlen;
-	int num;
-	num = n;
-	nlen = 0;
-	if (n < 0)
+	long num;
+	long temp;
+	char *res;
+	
+	if (n == 0)
 	{
-		nlen++;
-		n = -n;
+		res = malloc(2 * sizeof(char));
+		if (!res)
+			return NULL;
+		res[0] = '0';
+		res[1] = '\0';
+		return res;
 	}
-	while (n > 0)
+
+	nlen = (n < 0) ? 1 : 0;
+	num = (n < 0) ? -(long)n : n;
+
+	temp = num;
+	while (temp > 0)
 	{
-		n /= 10;
+		temp /= 10;
 		nlen++;
 	}
-	res = malloc(nlen * sizeof(char));
+
+	res = malloc((nlen + 1) * sizeof(char));
+	if (!res)
+		return NULL;
+
 	res[nlen] = '\0';
 	nlen--;
-	if (num < 0)
+
+	temp = num;
+
+	if (n < 0)
 	{
 		res[0] = '-';
-		num = -num;
 	}
+
 	while (nlen >= 0)
 	{
-		if (num > 0)
-			res[nlen] = '0' + (num % 10);
-		num /= 10;
+		if (temp > 0)
+			res[nlen] = '0' + (temp % 10);
+		temp /= 10;
 		nlen--;
 	}
-	return (res);
+
+	return res;
 }

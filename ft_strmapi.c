@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:43:57 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/09 12:50:47 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:33:10 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	str = malloc(sizeof(char) * (ft_strlen((char *)s)+1));
+	if (!str)
+		return (NULL);
 	res = str;
 	if (!str)
 		return (NULL);

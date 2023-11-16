@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:40:38 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/15 11:42:46 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/15 12:04:41 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/15 12:17:26 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char **ft_split(char const *str, char c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	if (s == NULL || f == NULL)
+		return;
+
+	for (unsigned int i = 0; s[i] != '\0'; ++i)
+		f(i, &s[i]);
 }
