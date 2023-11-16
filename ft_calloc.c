@@ -6,7 +6,7 @@
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:36:51 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/16 11:31:30 by maemaldo         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:30:00 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,18 @@ void *ft_calloc(size_t nmemb, size_t size)
 {
 	void *ptr;
 
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
+	if (nmemb * size == 0)
+	{
+		ptr = malloc(nmemb * size);
+		if (!ptr)
+			return (NULL);
 		return (ptr);
-	ft_bzero(ptr, size * nmemb);
+	}
+	if (nmemb * size / size != nmemb || size * nmemb / nmemb != size)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
