@@ -44,6 +44,18 @@ FILES = ft_strdup.c \
 
 OBJS = ${FILES:.c=.o}
 
+FILES2 = ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+
+OBJS2 = ${FILES2:.c=.o}
+
 .c.o: 	
 		${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
@@ -53,9 +65,12 @@ ${NAME}: 	${OBJS}
 all: 		$(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS2)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: clean all
+
+bonus:	$(OBJS) $(OBJS2)
+	ar rc $(NAME) $(OBJS) $(OBJS2)

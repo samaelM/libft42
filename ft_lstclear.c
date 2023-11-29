@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 10:43:57 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/17 16:45:15 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/29 12:55:53 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/29 13:59:43 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char *str;
-	unsigned int i;
-
-	if (s == NULL || f== NULL)
-		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s)+1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	t_list *next_cell;
+	if (*lst && del)
 	{
-		str[i] = (*f)(i, s[i]);
-		i++;
+		while (*lst)
+		{
+			(*del)((*lst)->content);
+			next_cell = (*lst)->next;
+			free(*lst);
+			*lst = next_cell;
+		}
 	}
-	str[i] = '\0';
-	return (str);
 }

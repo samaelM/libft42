@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:37:53 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/20 12:02:21 by maemaldo         ###   ########.fr       */
+/*   Created: 2023/11/29 14:14:03 by maemaldo          #+#    #+#             */
+/*   Updated: 2023/11/29 14:40:44 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
-	//size_t remaining_len;
-	//size_t actual_len;
+	t_list	*first;
+	t_list	*new;
 
-	//remaining_len = ft_strlen(s) - start;
-	//actual_len = (len < remaining_len) ? len : remaining_len;
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
+	if (!f || !del)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
+	first = NULL;
+	while (lst)
 	{
-		if (i >= start && j < len)
+		if (!(new = ft_lstnew((*f)(lst->content))))
 		{
-			str[j] = s[i];
-			j++;
+			while (first)
+			{
+				new = first->next;
+				(*del)(first->content);
+				free(first);
+				first = new;
+			}
+			lst = NULL;
+			return (NULL);
 		}
-		i++;
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
 	}
-	str[j] = 0;
-	return (str);
+	return (first);
 }
