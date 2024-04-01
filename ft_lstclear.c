@@ -5,24 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 12:55:53 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/29 13:59:43 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:45:38 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:45:39 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *next_cell;
-	if (*lst && del)
+	t_list	*next;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		while (*lst)
-		{
-			(*del)((*lst)->content);
-			next_cell = (*lst)->next;
-			free(*lst);
-			*lst = next_cell;
-		}
+		next = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = next;
 	}
+	*lst = NULL;
 }

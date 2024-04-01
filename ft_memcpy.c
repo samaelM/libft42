@@ -5,17 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:22:18 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:49 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:46:54 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/11 16:10:45 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memcpy(void *dest, const void *src, int n)
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char *d = dest;
-	const char *s = src;
-	while (n--)
-		*d++ = *s++;
-	return dest;
+	size_t	i;
+
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
 }

@@ -5,62 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 11:38:43 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/16 14:10:58 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:45:04 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:45:05 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char *ft_itoa(int n)
+static size_t	ft_nbrlen(int n)
 {
-	int nlen;
-	long num;
-	long temp;
-	char *res;
-	
-	if (n == 0)
+	size_t	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
 	{
-		res = malloc(2 * sizeof(char));
-		if (!res)
-			return NULL;
-		res[0] = '0';
-		res[1] = '\0';
-		return res;
+		n /= 10;
+		len++;
 	}
+	return (len);
+}
 
-	nlen = (n < 0) ? 1 : 0;
-	num = (n < 0) ? -(long)n : n;
+char	*ft_itoa(int n)
+{
+	char			*res;
+	size_t			len;
+	unsigned int	nb;
 
-	temp = num;
-	while (temp > 0)
-	{
-		temp /= 10;
-		nlen++;
-	}
-
-	res = malloc((nlen + 1) * sizeof(char));
+	len = ft_nbrlen(n);
+	res = ft_calloc(len + 1, 1);
 	if (!res)
-		return NULL;
-
-	res[nlen] = '\0';
-	nlen--;
-
-	temp = num;
-
+		return (NULL);
+	nb = n;
 	if (n < 0)
+		nb = -n;
+	while (len--)
 	{
+		res[len] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	if (n < 0)
 		res[0] = '-';
-	}
-
-	while (nlen >= 0)
-	{
-		if (temp > 0)
-			res[nlen] = '0' + (temp % 10);
-		temp /= 10;
-		nlen--;
-	}
-
-	return res;
+	return (res);
 }

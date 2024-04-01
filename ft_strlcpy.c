@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 11:55:18 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 12:53:55 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:43 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/11 16:17:28 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t srcsize;
-	size_t i;
+	size_t	i;
 
-	if (!dst || !src)
-		return (0);
-	srcsize = ft_strlen((char *)src);
 	i = 0;
-	if (size != 0)
+	while (src[i] && i + 1 < dstsize)
 	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		dst[i] = src[i];
+		i++;
 	}
-	return (srcsize);	
+	if (dstsize > 0)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (ft_strlen(src));
 }

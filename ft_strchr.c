@@ -5,28 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:56:46 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/14 12:02:15 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:04 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:48:05 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == (char)c)
-			return ((char*)(s + i));
-		i++;
+			return ((char *)s + i);
+		else
+			i++;
 	}
-	if (s[i] == (char)c)
-		return ((char*)(s + i));
+	if (s[i] == c)
+		return ((char *)s + i);
 	return (NULL);
 }

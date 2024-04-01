@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 11:50:23 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/28 12:00:48 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:45:59 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:46:00 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return(lst);
-	while (lst->next != NULL)
-		lst = lst->next;
+	if (lst)
+	{
+		while (lst->next)
+			lst = lst->next;
+	}
 	return (lst);
 }

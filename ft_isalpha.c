@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:36:50 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:29:34 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:44:23 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:44:27 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isalpha(char c)
+
+int	ft_isalpha(int c)
 {
-    if ((c > 64 && c <91) || (c > 96 && c <123))
-        return (1);
-    return (0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }

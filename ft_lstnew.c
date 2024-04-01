@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 11:10:37 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/28 12:20:15 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:46:17 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:46:18 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *cell;
+	t_list	*node;
 
-	if (!(cell = (t_list*)malloc(sizeof(*cell))))
+	node = ft_calloc(1, sizeof(*node));
+	if (!node)
 		return (NULL);
-	cell->content = content;
-	cell->next = NULL;
-	return (cell);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

@@ -5,30 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:36:51 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/16 18:30:00 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:43:41 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:43:58 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
+	void	*ptr;
+	size_t	fsize;
 
-	if (nmemb * size == 0)
-	{
-		ptr = malloc(nmemb * size);
-		if (!ptr)
-			return (NULL);
-		return (ptr);
-	}
-	if (nmemb * size / size != nmemb || size * nmemb / nmemb != size)
+	if (!nmemb || !size)
+		return (malloc(0));
+	fsize = nmemb * size;
+	if ((fsize < size) || (fsize < nmemb))
 		return (NULL);
-	ptr = malloc(nmemb * size);
+	ptr = malloc(fsize);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	return (ft_bzero(ptr, fsize));
 }

@@ -5,35 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:06:33 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/13 13:20:04 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:37 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:48:38 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+static size_t	ft_strnlen(const char *s, size_t n)
 {
 	size_t	i;
-	size_t	j;
-	size_t	dest_length;
-	size_t	src_length;
 
-	src_length = ft_strlen(src);
-	dest_length = ft_strlen(dst);
-	j = dest_length;
 	i = 0;
-	if (dest_length < size - 1 && size > 0)
+	while (s[i] && i != n)
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
+{
+	size_t	srclen;
+	size_t	destlen;
+
+	srclen = ft_strlen(src);
+	if (!n)
+		return (srclen);
+	destlen = ft_strnlen(dest, n);
+	if (destlen == n)
+		return (n + srclen);
+	if (srclen < n - destlen)
+		ft_memcpy(dest + destlen, src, srclen + 1);
+	else
 	{
-		while (src[i] && dest_length + i < size - 1)
-		{
-			dst[j] = src[i];
-			j++;
-			i++;
-		}
-		dst[j] = 0;
+		ft_memcpy(dest + destlen, src, n - destlen - 1);
+		dest[n - 1] = '\0';
 	}
-	if (dest_length >= size)
-		dest_length = size;
-	return (dest_length + src_length);
+	return (srclen + destlen);
 }

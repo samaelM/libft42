@@ -5,39 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:05:36 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/15 11:44:38 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:28 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:48:29 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		len1;
-	int		len2;
-	char	*str;
+	char	*dest;
+	size_t	i;
+	size_t	j;
 
-	if (s1 && s2)
+	dest = malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
 	{
-		len1 = ft_strlen(s1);
-		len2 = ft_strlen(s2);
-		str = (char*)malloc(sizeof(char) * (len1 + len2 + 1));
-		if (str == NULL)
-			return (NULL);
-		i = -1;
-		while (s1[++i])
-			str[i] = s1[i];
-		i = -1;
-		while (s2[++i])
-		{
-			str[len1] = s2[i];
-			len1++;
-		}
-		str[len1] = '\0';
-		return (str);
+		dest[j++] = s1[i];
+		i++;
 	}
-	return (NULL);
+	i = 0;
+	while (s2[i])
+	{
+		dest[j++] = s2[i];
+		i++;
+	}
+	dest[j] = 0;
+	return (dest);
 }

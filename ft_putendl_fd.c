@@ -5,16 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 11:01:05 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/13 11:10:01 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:47:16 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:47:17 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
+	size_t	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+		write(fd, &s[i++], 1);
 	write(fd, "\n", 1);
 }

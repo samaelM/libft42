@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:10:01 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 15:52:16 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:51 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:48:52 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_strlen(const char *str)
-{
-    int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

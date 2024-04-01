@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:04:41 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/15 12:17:26 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:48:19 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:48:20 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (s == NULL || f == NULL)
-		return;
+	size_t	i;
 
-	for (unsigned int i = 0; s[i] != '\0'; ++i)
+	if (!s)
+		return ;
+	i = -1;
+	while (s[++i])
 		f(i, &s[i]);
 }

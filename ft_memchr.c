@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:27:27 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/10 14:44:10 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:46:38 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:46:39 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
-	char		*string;
+	unsigned char	*str;
+	unsigned char	letter;
+	size_t			i;
 
-	if (s == NULL)
-		return (NULL);
+	str = (unsigned char *)s;
+	letter = (unsigned char)c;
 	i = 0;
-	string = (void *)s;
 	while (i < n)
 	{
-		if (string[i] == (char)c)
-			return (&string[i]);
+		if (str[i] == letter)
+			return (str + i);
 		i++;
 	}
 	return (NULL);

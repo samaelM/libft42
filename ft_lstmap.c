@@ -5,37 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 14:14:03 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/29 14:40:44 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:46:08 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:46:09 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*first;
-	t_list	*new;
+	t_list	*result;
+	t_list	*node;
 
-	if (!f || !del)
+	if (!lst || !f || !del)
 		return (NULL);
-	first = NULL;
+	result = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst->content))))
+		node = ft_lstnew(f(lst->content));
+		if (!node)
 		{
-			while (first)
-			{
-				new = first->next;
-				(*del)(first->content);
-				free(first);
-				first = new;
-			}
-			lst = NULL;
+			ft_lstclear(&result, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&first, new);
+		ft_lstadd_back(&result, node);
 		lst = lst->next;
 	}
-	return (first);
+	return (result);
 }

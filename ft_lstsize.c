@@ -5,25 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 11:40:41 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/28 11:49:49 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:46:23 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:46:24 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	size;
 
-	i = 0;
-	if (!lst)
-		return(i);
-	while (lst->next != NULL)
+	size = 0;
+	while (lst)
 	{
-		i++;
 		lst = lst->next;
+		size++;
 	}
-	i++;
-	return (i);
+	return (size);
 }

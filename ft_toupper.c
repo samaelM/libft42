@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:50:31 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:30:16 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:49:49 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:49:50 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_toupper(int c)
+
+int	ft_toupper(int i)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (i >= 'a' && i <= 'z')
+		i -= 32;
+	return (i);
 }

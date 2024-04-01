@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 15:55:19 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/08 11:30:13 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:49:41 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:49:42 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_tolower(int c)
+
+int	ft_tolower(int i)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	if (i >= 'A' && i <= 'Z')
+		i += 32;
+	return (i);
 }

@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maemaldo <maemaldo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 10:51:49 by maemaldo          #+#    #+#             */
-/*   Updated: 2023/11/13 11:09:01 by maemaldo         ###   ########.fr       */
+/*   Created: 2024/01/05 14:47:09 by maemaldo          #+#    #+#             */
+/*   Updated: 2024/01/05 14:47:10 by maemaldo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
