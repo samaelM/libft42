@@ -58,25 +58,20 @@ FILES2 =	ft_lstnew.c \
 OBJS2 = ${FILES2:.c=.o}
 
 .c.o:		 
-				${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+				@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:		 ${OBJS}
-				ar rc ${NAME} ${OBJS}
+				@$(AR) rc ${NAME} ${OBJS}
 
 all:				 $(NAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(FILES)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS2)
-
 clean:
-		$(RM) $(OBJS) $(OBJS2)
+		@$(RM) $(OBJS) $(OBJS2)
 
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
 re: clean all
 
-
 bonus: ${OBJS} ${OBJS2}
-				ar rc ${NAME} ${OBJS} ${OBJS2}
+				@$(AR) rc ${NAME} ${OBJS} ${OBJS2}
